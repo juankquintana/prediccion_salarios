@@ -1,0 +1,10 @@
+Experimentos Primer Avance
+
+Links a databricks:
+
+XGBRegressor JCQ 
+https://community.cloud.databricks.com/ml/experiments/3416673819376563?viewStateShareKey=26a2abcf92919762d9f61a6840887ceb6ccb80fbaa18097ed31797ea426f03ef
+
+LGBM PL
+https://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab64c1eedd6354b352b6d7bcahttps://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab64c1eedd6354b352b6d7bcahttps://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab6
+
