@@ -169,7 +169,7 @@ def update_output(n_clicks, job_title, experience_level, employee_country, compa
             'company_size': company_size
         }
 
-        return f"Predicted Salary Range: {formatted_prediction}. Inputs Collected: {collected_data}"
+        return f"Predicted Salary: {formatted_prediction}. Inputs Collected: {collected_data}"
 
 if __name__ == "__main__":
     app.run_server(debug=True, port=4567)
