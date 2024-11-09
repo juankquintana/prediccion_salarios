@@ -2,9 +2,19 @@ Experimentos Primer Avance
 
 Links a databricks:
 
+Regresion:
+
 XGBRegressor JCQ 
 https://community.cloud.databricks.com/ml/experiments/3416673819376563?viewStateShareKey=26a2abcf92919762d9f61a6840887ceb6ccb80fbaa18097ed31797ea426f03ef
 
 LGBM PL
 https://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab64c1eedd6354b352b6d7bcahttps://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab64c1eedd6354b352b6d7bcahttps://community.cloud.databricks.com/ml/experiments/3506435425110878?viewStateShareKey=55b0f86fd61312f75e71fe74dd96e5188826eaaab6
+
+Clasificacion
+
+CatBoost ABC
+https://community.cloud.databricks.com/ml/experiments/2684037769550374?viewStateShareKey=58e8105002234f31c4fdb6004e51b2df308ad2a1e06ceec1b2410516fbae4cc2
+
+RandomForest ABC
+https://community.cloud.databricks.com/ml/experiments/2684037769550369?viewStateShareKey=784e8ff0b3ae5c6fed86f90ba747e87d915c50773af89b1e8989e19a8cb3828d
 
