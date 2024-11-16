@@ -1,4 +1,3 @@
-./model-pkg/best_cbr_reg_model_country.pkl
 uvicorn>=0.20.0,<0.30.0
 catboost>=1.0.0,<2.0.0
 pycountry-convert>=0.7.2,<1.0.0

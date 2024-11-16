@@ -1,28 +1,30 @@
-from typing import List, Optional
+from typing import Any, List, Optional
 from pydantic import BaseModel
 import pickle
 import pandas as pd
 import pycountry_convert as pc
 from catboost import CatBoostRegressor
 import os
- 
 
-# Definir los esquemas de entrada y salida para la API
+# Esquema de los resultados de predicción
 class PredictionResults(BaseModel):
     errors: Optional[Any]
     version: str
-    predictions: Optional[Any[float]]
+    predictions: Optional[Any]
 
-class MultipleDataInputs(BaseModel):
-    inputs: List[DataInputSchema]  # Aquí asumo que DataInputSchema define el formato de los datos individuales
-    # Campos adicionales que el modelo necesita según tu código:
+
+class DataInput(BaseModel):
     job_title: str
     experience_level: str
     employee_country: str
     company_country: str
-    employment_type: str  # Tipo de empleo (Full_time, Part_time, etc.)
-    remote_ratio: str     # Porcentaje de trabajo remoto
-    company_size: str    # Tamaño de la empresa (Small, Medium, Large)
+    # Comentado porque no se usan en el modelo estas variables
+    # employment_type: str  # Tipo de empleo (Full_time, Part_time, etc.)
+    # remote_ratio: str     # Porcentaje de trabajo remoto
+    # company_size: str    # Tamaño de la empresa (Small, Medium, Large)
+
+class MultipleDataInputs(BaseModel):
+    inputs: List[DataInput]  # Lista de objetos DataInput
     class Config:
         schema_extra = {
             "example": {
@@ -31,11 +33,22 @@ class MultipleDataInputs(BaseModel):
                         "job_title": "Software Engineer",
                         "experience_level": "Mid_level",
                         "employee_country": "United States",
-                        "company_country": "United States",
-                        "employment_type": "Full_time",
-                        "remote_ratio": "< 20%",
-                        "company_size": "Large (> 250 employees)"
-                    }
+                        "company_country": "United States"
+                        # Comentado porque no se usan en el modelo estas variables
+                        # ,
+                        # "employment_type": "Full_time",
+                        # "remote_ratio": "< 20%",
+                        # "company_size": "Large (> 250 employees)"
+                    }#,
+                    # {
+                    #     "job_title": "Data Scientist",
+                    #     "experience_level": "Senior_level",
+                    #     "employee_country": "Canada",
+                    #     "company_country": "United States",
+                    #     "employment_type": "Contract",
+                    #     "remote_ratio": "50-80%",
+                    #     "company_size": "Medium (50-250 employees)"
+                    # }
                 ]
             }
         }
@@ -73,15 +86,16 @@ def preprocess_inputs(job_title, experience_level, employee_country, company_cou
         'employee_country': employee_country
     }])
 
-# Defir función para cargar el modelo
 def load_model():
-    model_path = os.path.join(os.path.dirname(__file__), '..', 'model-pkg', 'best_cbr_reg_model_country.pkl')
+    model_path = os.path.join(os.path.dirname(__file__), '..', '..', 'model-pkg', 'best_cbr_reg_model_country.pkl')
+    
     with open(model_path, 'rb') as model_file:
         model = pickle.load(model_file)
     return model
 
 # Cargar el modelo
 model = load_model()
+
 
 def predict_salary(job_title, experience_level, employee_country, company_country):
     # Preprocess inputs

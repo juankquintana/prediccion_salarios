@@ -2,8 +2,8 @@ import json
 from typing import Any
 import numpy as np
 import pandas as pd
-from schemas.predict import predict_salary
-from schemas.predict import preprocess_inputs
+from app.schemas.predict import predict_salary
+from app.schemas.predict import preprocess_inputs
 from fastapi import APIRouter, HTTPException
 from fastapi.encoders import jsonable_encoder
 from loguru import logger
