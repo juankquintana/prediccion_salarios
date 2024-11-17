@@ -94,7 +94,15 @@ rem_unique_val = ['< 20%', '20% - 80%', '> 80%']
 siz_unique_val = ['Small (< 50 employees)', 'Medium (50 - 250 employees)', 'Large (> 250 employees)']
 cco_unique_val = sorted(df['company_country'].unique())
 
-app = Dash(external_stylesheets=[dbc.themes.FLATLY])
+app = Dash(
+        __name__,
+        meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+        external_stylesheets=[dbc.themes.FLATLY]
+        )
+app.title = "Tablero Predicción de Salarios"
+
+server = app.server # Not sure what does this do (app.py W1)
+app.config.suppress_callback_exceptions = True
 
 sidebar = html.Div(
     [
