@@ -14,7 +14,7 @@ import plotly.express as px
 import plotly.colors
 
 # Load data
-url = 'https://raw.githubusercontent.com/juankquintana/prediccion_salarios/refs/heads/branch_alejandra/Data/data_top10_country.csv'
+url = 'https://raw.githubusercontent.com/juankquintana/prediccion_salarios/refs/heads/main/Data/data_top10_country.csv'
 df= pd.read_csv(url)
 
 # Salary - Ranges 
